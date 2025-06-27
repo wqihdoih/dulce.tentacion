@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pastelería Dulce Tentación</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fffafc;
+      color: #5c3b3b;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffe6f0;
+      text-align: center;
+      padding: 30px 20px;
+      border-bottom: 5px solid #ff99c8;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.2em;
+    }
+
+    section {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #d14d72;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: 🍰;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin: 8px 0;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+
+    .galeria-contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .galeria-img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px #ffc0cb;
+    }
+
+    #pedido input,
+    #pedido textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ffc0cb;
+      border-radius: 8px;
+      background-color: #fff0f5;
+    }
+
+    #pedido button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #pedido button:hover {
+      background-color: #1ebe5d;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #ffe6f0;
+      padding: 20px;
+      border-top: 5px solid #ff99c8;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎂 Pastelería Dulce Tentación</h1>
+    <p>Endulzamos tus días con magia y amor 💖</p>
+  </header>
+
+  <section id="sobre-nosotros">
+    <h2>🍰 Sobre Nosotros</h2>
+    <p>Somos una pastelería artesanal apasionada por crear dulces momentos. Usamos ingredientes frescos y mucho amor en cada receta. ¡Perfecto para celebrar o simplemente darte un gustito!</p>
+  </section>
+
+  <section id="menu">
+    <h2>🧁 Nuestro Menú</h2>
+    <ul>
+      <li><strong>Torta Tentación de Chocolate</strong> - Suave, intensa y deliciosa</li>
+      <li><strong>Cupcakes</strong> - Pequeñas explosiones de color y sabor</li>
+      <li><strong>Pie de Limón</strong> - Cremoso con un toque ácido irresistible</li>
+      <li><strong>Galletas Personalizadas</strong> - Perfectas para regalos o eventos</li>
+    </ul>
+  </section>
+
+  <section id="galeria">
+    <h2>📸 Galería</h2>
+    <p>Nuestras delicias favoritas:</p>
+    <div class="galeria-contenedor">
+      <img src="https://i.pinimg.com/736x/a4/50/f8/a450f868366d3523febf801836bba5b2.jpg" alt="pastel delicioso" class="galeria-img">
+      <img src="https://i.pinimg.com/736x/44/57/56/445756f6847097705379680ab07ec8fd.jpg" alt="cupcake colorido" class="galeria-img">
+      <img src="https://i.pinimg.com/736x/0d/07/17/0d0717d2b27e08fd48ca95c45f4aa4a7.jpg" alt="un toque acido" class="galeria-img">
+      <img src="https://i.pinimg.com/736x/6e/2a/61/6e2a6103be3a1864251483872c6dc930.jpg" alt="todo a tu gusto" class="galeria-img">
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>📞 Contáctanos</h2>
+    <p><strong>Horario:</strong> Lunes a Sábado de 3:00 p.m. a 7:00 p.m.</p>
+    <p><strong>Ubicación:</strong> Trinidad, Bolivia</p>
+    <p><strong>WhatsApp:</strong></p>
+    <a href="https://wa.me/59168957546?text=¡Hola!%20Quisiera%20hacer%20un%20pedido%20de%20pastel%20🎂"
+       class="whatsapp-btn" target="_blank">📲 Haz tu pedido por WhatsApp</a>
+  </section>
+
+  <section id="pedido">
+    <h2>📝 Pedido Personalizado</h2>
+    <p>Contanos qué delicia soñás y lo hacemos realidad 💭🍰</p>
+
+    <form id="formulario-pedido" onsubmit="enviarPedido(event)">
+      <label for="nombre">Tu nombre:</label><br>
+      <input type="text" id="nombre" name="nombre" required><br>
+
+      <label for="producto">¿Qué querés pedir? (torta, cupcakes, etc):</label><br>
+      <input type="text" id="producto" name="producto" required><br>
+
+      <label for="detalles">Detalles (sabores, colores, dedicatoria...):</label><br>
+      <textarea id="detalles" name="detalles" rows="4" required></textarea><br>
+
+      <label for="fecha">¿Para qué fecha lo querés?</label><br>
+      <input type="date" id="fecha" name="fecha" required><br>
+
+      <button type="submit">📩 Enviar por WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Gracias por visitarnos 💕 ¡Te esperamos con algo dulce!</p>
+  </footer>
+
+  <script>
+    function enviarPedido(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const producto = document.getElementById('producto').value;
+      const detalles = document.getElementById('detalles').value;
+      const fecha = document.getElementById('fecha').value;
+
+      const mensaje = `¡Hola! Soy ${nombre} y quiero pedir: ${producto}%0ADetalles: ${detalles}%0AFecha: ${fecha}`;
+      const numero = "59168957546";
+
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
